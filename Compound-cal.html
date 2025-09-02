@@ -231,5 +231,9 @@
       }catch(e){ console.error(e); showError('Initialization error: '+e.message); }
     });
   </script>
+  <script>
+    // Fallback: ensure updateUI is globally accessible for inline handlers
+    try{ if(typeof window.updateUI !== 'function' && typeof updateUI === 'function'){ window.updateUI = updateUI; } }catch(e){}
+  </script>
 </body>
 </html>
